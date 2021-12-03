@@ -1,5 +1,4 @@
 let pizzaMenu = document.querySelector(".mobile-pizza-menu");
-console.log(pizzaMenu);
 
 function insertPizza() {
   pizzaMenu.innerHTML += `<div class="pizza">
@@ -27,6 +26,21 @@ function insertPizza() {
 </div>`;
 }
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 4; i++) {
   insertPizza();
 }
+
+// fetch("localhost:4000/", {
+//   method: "post",
+//   body: JSON.stringify({}),
+// })
+//   .then((res) => res.json())
+//   .then((json) => console.log(json))
+//   .catch((err) => console.log(err));
+
+fetch("http://127.0.0.1:4000/", {
+  method: "get",
+})
+  .then((res) => res.json())
+  .then((json) => console.log(json))
+  .catch((err) => console.log(err));

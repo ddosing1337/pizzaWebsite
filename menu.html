@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-    />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
@@ -17,9 +13,6 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap"
       rel="stylesheet"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <link type="text/css" rel="stylesheet" href="css/styles.css" />
     <link
       rel="icon"
@@ -27,19 +20,11 @@
       type="image/gif"
       sizes="16x16"
     />
-    <script
-      src="https://kit.fontawesome.com/1178c1936b.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css"
-    />
-    <title>При Голев | Меню</title>
+    <title>Пиццерия</title>
   </head>
 
   <body>
-    <div class="desktop-nav" id="top">
+    <div class="desktop-nav">
       <div class="logo">
         <a href="index.html">
           <img src="images/site-icon.png" />
@@ -49,269 +34,27 @@
         <ul>
           <li><a href="index.html">Начало</a></li>
           <li><a href="menu.html">Меню</a></li>
-          <li><a href="contacts.html">Контакти</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
           <li>
             <a href="cart.html" id="cart"
-              >Количка <i class="fas fa-shopping-cart"></i
+              >Корзина <i class="fas fa-shopping-cart"></i
             ></a>
           </li>
         </ul>
       </nav>
     </div>
-    <div class="mobile-nav">
-      <nav class="navbar navbar-dark yellow lighten-1 mb-4">
-        <a href="index.html">
-          <img src="images/site-icon.png" class="mobile-logo" />
-        </a>
-        <!-- Collapse button -->
-        <button
-          class="navbar-toggler second-button"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent23"
-          aria-controls="navbarSupportedContent23"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <div class="animated-icon2">
-            <span></span><span></span><span></span><span></span>
-          </div>
-        </button>
-        <!-- Collapsible content -->
-        <div class="collapse navbar-collapse" id="navbarSupportedContent23">
-          <!-- Links -->
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a href="index.html" class="nav-link">Начало</a>
-            </li>
-            <li class="nav-item active">
-              <a href="menu.html" class="nav-link"
-                >Меню<span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a href="contacts.html" class="nav-link">Контакти</a>
-            </li>
-            <li class="nav-item">
-              <a href="cart.html" class="nav-link" id="mobile-cart"
-                >Количка <i class="fas fa-shopping-cart"></i
-              ></a>
-            </li>
-          </ul>
-          <!-- Links -->
-        </div>
-      </nav>
-    </div>
     <main class="container container-menu">
-      <img
-        class="pizza-detail"
-        src="images/pizzas/sm/italian.png"
-        alt="Пица детайл"
-      />
-      <img
-        class="pizza-detail"
-        src="images/pizzas/sm/italian.png"
-        alt="Пица детайл"
-      />
-      <section class="pizza-carousel-menu">
-        <div>
-          <h1 class="carousel-pizza-name">Голев специална</h1>
-        </div>
-        <div class="carousel-pizza-ingredients">
-          <h2>Съставки</h2>
-          <p id="carousel-pizza-ingredients-text">
-            Доматен сос, гъби, пражка шунка, лук, чушки, кашкавал, чубрица
-          </p>
-        </div>
-
-        <div class="size-button-container">
-          <button class="size-button">S</button>
-          <button class="size-button">M</button>
-          <button class="size-button">L</button>
-        </div>
-        <div class="carousel-price-and-servings-container">
-          <div class="carousel-pizza-servings">
-            <h2>Брой</h2>
-            <div class="carousel-pizza-buttons-container">
-              <button class="servings-button">-</button>
-              <p>01</p>
-              <button class="servings-button">+</button>
-            </div>
-          </div>
-
-          <div class="carousel-pizza-price">
-            <h2>Цена</h2>
-            <p id="pizza-pricing">6.00</p>
-          </div>
-        </div>
-
-        <button class="order-button" id="carousel-order-button">
-          Добави <i class="fas fa-shopping-cart"></i>
-        </button>
-
-        <div class="carousel-pizza-directions">
-          <!-- <button id="left-arrow"><i class="fas fa-arrow-left"></i></button>
-                <button id="right-arrow"><i class="fas fa-arrow-right"></i></button> -->
-        </div>
-        <!-- TO STYLE -->
-        <div class="carousel-pizzas-overflow-container">
-          <div class="carousel-pizzas">
-            <div class="carousel-pizza-container">
-              <img
-                class="carousel-pizza"
-                src="images/pizzas/sm/golev_specialna.png"
-              />
-            </div>
-            <div class="carousel-pizza-container carousel-pizza-2">
-              <img
-                class="carousel-pizza"
-                src="images/pizzas/sm/american_hot.png"
-              />
-            </div>
-            <!-- <img src="images/pizzas/sm/american_hot.png">
-                    <img src="images/pizzas/sm/barbecue_classic.png">
-                    <img src="images/pizzas/sm/burger_pizza.png">
-                    <img src="images/pizzas/sm/carbonara.png">
-                    <img src="images/pizzas/sm/chick_chi_rick.png">
-                    <img src="images/pizzas/sm/extravaganza.png">
-                    <img src="images/pizzas/sm/formaggi.png">
-                    <img src="images/pizzas/sm/garden_classic.png">
-                    <img src="images/pizzas/sm/gaucho.png">
-                    <img src="images/pizzas/sm/hawai.png">
-                    <img src="images/pizzas/sm/ham_classic.png"> -->
-          </div>
-        </div>
-      </section>
-
-      <section class="mobile-pizza-menu">
-        <div class="pizza">
-          <figure>
-            <img
-              class="pizza-image"
-              src="images/pizzas/sm/ham_classic.png"
-              alt="Пица Шункова"
-            />
-          </figure>
-          <div class="pizza-box" data-base-price="6.40">
-            <div class="mobile-pizza-header">Шункова</div>
-            <div class="mobile-pizza-ingredients">
-              Доматен сос, шунка, гъби, зелена чушка, моцарела
-            </div>
-            <div class="mobile-pizza-price">
-              от <span class="price-accent">6.40</span>
-            </div>
-            <div class="buttons">
-              <button class="order-button">
-                Добави <i class="fas fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="pizza">
-          <figure>
-            <img
-              class="pizza-image"
-              src="images/pizzas/sm/ham_classic.png"
-              alt="Пица Шункова"
-            />
-          </figure>
-          <div class="pizza-box" data-base-price="6.40">
-            <div class="mobile-pizza-header">Шункова</div>
-            <div class="mobile-pizza-ingredients">
-              Доматен сос, шунка, гъби, зелена чушка, моцарела
-            </div>
-            <div class="mobile-pizza-price">
-              от <span class="price-accent">6.40</span>
-            </div>
-            <div class="buttons">
-              <button class="order-button">
-                Добави <i class="fas fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="pizza">
-          <figure>
-            <img
-              class="pizza-image"
-              src="images/pizzas/sm/ham_classic.png"
-              alt="Пица Шункова"
-            />
-          </figure>
-          <div class="pizza-box" data-base-price="6.40">
-            <div class="mobile-pizza-header">Шункова</div>
-            <div class="mobile-pizza-ingredients">
-              Доматен сос, шунка, гъби, зелена чушка, моцарела
-            </div>
-            <div class="mobile-pizza-price">
-              от <span class="price-accent">6.40</span>
-            </div>
-            <div class="buttons">
-              <button class="order-button">
-                Добави <i class="fas fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="pizza">
-          <figure>
-            <img
-              class="pizza-image"
-              src="images/pizzas/sm/ham_classic.png"
-              alt="Пица Шункова"
-            />
-          </figure>
-          <div class="pizza-box" data-base-price="6.40">
-            <div class="mobile-pizza-header">Шункова</div>
-            <div class="mobile-pizza-ingredients">
-              Доматен сос, шунка, гъби, зелена чушка, моцарела
-            </div>
-            <div class="mobile-pizza-price">
-              от <span class="price-accent">6.40</span>
-            </div>
-            <div class="buttons">
-              <button class="order-button">
-                Добави <i class="fas fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="pizza">
-          <figure>
-            <img
-              class="pizza-image"
-              src="images/pizzas/sm/ham_classic.png"
-              alt="Пица Шункова"
-            />
-          </figure>
-          <div class="pizza-box" data-base-price="6.40">
-            <div class="mobile-pizza-header">Шункова</div>
-            <div class="mobile-pizza-ingredients">
-              Доматен сос, шунка, гъби, зелена чушка, моцарела
-            </div>
-            <div class="mobile-pizza-price">
-              от <span class="price-accent">6.40</span>
-            </div>
-            <div class="buttons">
-              <button class="order-button">
-                Добави <i class="fas fa-shopping-cart"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section class="mobile-pizza-menu"></section>
     </main>
 
     <footer>
       <section class="footer-credits-section">
-        <p>Красимир Неделчев & Иван Митовски</p>
-        <p>&copy; Всички права запазени</p>
+        <p>Глеб Исаченко & Иван Парфиненко</p>
+        <br />
+        <p>2021</p>
       </section>
     </footer>
 
-    <script src="https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
-    <script src="https://unpkg.com/idb-keyval@5.0.6/dist/iife/index-min.js"></script>
-    <script src="./js/menu.js"></script>
-    <script src="js/javascript.js"></script>
+    <script defer src="./js/menu.js"></script>
   </body>
 </html>
