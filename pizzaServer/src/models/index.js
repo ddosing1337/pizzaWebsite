@@ -17,6 +17,10 @@ roles.hasMany(userRoles,{
 userRoles.belongsTo(roles)
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 60c4170f0c3af9992579d57cd4dbdd2ff4d64029
 users.hasMany(userRoles,{
     foreignKey:'role',
     sourceKey:'id',
