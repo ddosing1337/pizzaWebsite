@@ -75,106 +75,10 @@
                   >Цена</span
                 >
               </div>
-              <div class="cart-products">
-                <div class="cart-product-row">
-                  <div
-                    class="
-                      cart-table-cell cart-table-inner-cell cart-product-desc
-                    "
-                  >
-                    <img
-                      src="./images/pizzas/lg/barbecue_classic.png"
-                      alt="pizza_name"
-                      class="cart-product-image"
-                    />
-                    <div class="cart-product-name">Barbeque</div>
-                  </div>
-
-                  <div
-                    class="cart-table-cell cart-table-inner-cell cart-counter"
-                  >
-                    <!-- <button class="quantity-button"><img src="./images/minus.svg" alt=""></button>  -->
-                    <button class="blank-button button-minus">−</button>
-                    <span class="cart-product-quantity">3</span>
-                    <button class="blank-button button-plus">+</button>
-                    <!-- <button class="quantity-button"><img src="./images/plus.svg" alt=""></button></td> -->
-                  </div>
-                  <div class="cart-table-cell cart-table-inner-cell">
-                    <span
-                      class="
-                        cart-table-cell cart-table-inner-cell cart-product-price
-                      "
-                      >9.60</span
-                    >
-                  </div>
-                </div>
-                <div class="cart-product-row">
-                  <div
-                    class="
-                      cart-table-cell cart-table-inner-cell cart-product-desc
-                    "
-                  >
-                    <img
-                      src="./images/pizzas/lg/barbecue_classic.png"
-                      alt="pizza_name"
-                      class="cart-product-image"
-                    />
-                    <div class="cart-product-name">Barbeque superpizza</div>
-                  </div>
-
-                  <div
-                    class="cart-table-cell cart-table-inner-cell cart-counter"
-                  >
-                    <!-- <button class="quantity-button"><img src="./images/minus.svg" alt=""></button>  -->
-                    <button class="blank-button button-minus">−</button>
-                    <span class="cart-product-quantity">3</span>
-                    <button class="blank-button button-plus">+</button>
-                    <!-- <button class="quantity-button"><img src="./images/plus.svg" alt=""></button></td> -->
-                  </div>
-                  <div
-                    class="
-                      cart-table-cell cart-table-inner-cell cart-product-price
-                    "
-                  >
-                    129.60
-                  </div>
-                </div>
-                <div class="cart-product-row">
-                  <div
-                    class="
-                      cart-table-cell cart-table-inner-cell cart-product-desc
-                    "
-                  >
-                    <img
-                      src="./images/pizzas/lg/barbecue_classic.png"
-                      alt="pizza_name"
-                      class="cart-product-image"
-                    />
-                    <div class="cart-product-name">Barbeque</div>
-                  </div>
-
-                  <div
-                    class="cart-table-cell cart-table-inner-cell cart-counter"
-                  >
-                    <!-- <button class="quantity-button"><img src="./images/minus.svg" alt=""></button>  -->
-                    <button class="blank-button button-minus">−</button>
-                    <span class="cart-product-quantity">30</span>
-                    <button class="blank-button button-plus">+</button>
-                    <!-- <button class="quantity-button"><img src="./images/plus.svg" alt=""></button></td> -->
-                  </div>
-                  <div class="cart-table-cell cart-table-inner-cell">
-                    <span
-                      class="
-                        cart-table-cell cart-table-inner-cell cart-product-price
-                      "
-                      >9.60</span
-                    >
-                  </div>
-                </div>
-              </div>
+              <div class="cart-products"></div>
               <div class="cart-footer">
                 <span class="cart-footer-cell cart-total-label">Итого:</span>
-                <span class="cart-footer-cell cart-total"><b>0.00</b></span>
+                <span class="cart-footer-cell cart-total"><b>1234.00</b></span>
               </div>
             </div>
 
@@ -222,7 +126,7 @@
               <i class="far fa-clock fa-sm" aria-hidden="true"></i> Ваш заказ
               будет доставлен в течении <span id="delivery-time">30</span> мин
             </p>
-            <form class="delivery-form" action="#order" method="POST">
+            <form class="delivery-form">
               <div class="input-group">
                 <div class="input-container">
                   <label for="fName">Имя</label>
@@ -264,25 +168,22 @@
                   <input
                     type="tel"
                     name="phone"
-                    placeholder="08xx-xxx-xxx"
+                    placeholder="+375 (XX) XX-XX-XXX"
                     required
                     id="phone"
                   />
                 </div>
               </div>
 
-              <div>
-                <label for="asking">Допълнително запитване</label>
+              <div class="input-group">
+                <label for="additions">Дополнительная информация</label>
                 <textarea
-                  name="asking"
-                  placeholder="Допълнително запитване..."
+                  id="additions"
+                  name="additions"
+                  placeholder="Дополнительная информация"
                 ></textarea>
               </div>
-              <input
-                type="submit"
-                value="Поръчай"
-                onclick="return Validate()"
-              />
+              <button id="submit-button" type="submit">Заказать</button>
             </form>
           </section>
         </div>

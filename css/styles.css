@@ -274,7 +274,6 @@ body {
   /* display: none; */
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 30px;
 }
 
 .mobile-pizza-price {
@@ -631,7 +630,7 @@ form textarea {
   max-height: 300px;
 }
 
-form input[type="submit"] {
+form button[type="submit"] {
   display: block;
   background-color: #941a26;
   color: #fff;
@@ -641,12 +640,13 @@ form input[type="submit"] {
   padding: 10px 25px;
   text-transform: uppercase;
   font-size: 1.2em;
+  font-family: "Montserrat Alternates", sans-serif;
   cursor: pointer;
   transition: 0.3s ease-out;
   transition-property: color background-color;
 }
 
-form input[type="submit"]:hover {
+form button[type="submit"]:hover {
   background-color: #fff;
   color: #941a26;
 }
@@ -791,6 +791,10 @@ footer p {
   padding: 16px 0;
 }
 
+.cart-footer {
+  margin-top: 20px;
+}
+
 .cart-footer-cell {
   padding-top: 32px;
   font-size: 1.1em;
@@ -827,24 +831,23 @@ footer p {
   color: #fff;
 }
 
-.delivery-form {
-}
-
 .delivery-form .input-group {
   display: flex;
+  justify-content: space-between;
+}
+
+.input-group:nth-child(3n) {
+  display: block;
 }
 
 .input-container {
-  flex: 0 0 50%;
-  padding: 0 16px;
+  width: 45%;
 }
 
-.input-container:first-child {
-  padding-left: 0;
-}
-
-.input-container:last-child {
-  padding-right: 0;
+.input-container input::placeholder,
+textarea::placeholder {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 1.2em;
 }
 
 .cart-item {
@@ -864,9 +867,6 @@ footer p {
     display: block;
   }
 
-  .input-container {
-    padding: 0;
-  }
   .delivery-form {
     width: 100%;
   }
@@ -992,10 +992,6 @@ footer p {
     display: flex;
   }
 
-  .container-menu .mobile-pizza-menu {
-    /* display: none; */
-  }
-
   .form-container {
     width: 70%;
     margin: 0 auto;
@@ -1021,11 +1017,11 @@ footer p {
     visibility: visible;
   }
 
-  .pizza {
+  /* .pizza {
     flex: 0 0 400px;
     margin-left: 40px;
     margin-right: 40px;
-  }
+  } */
 
   .card {
     flex: 0 0 300px;

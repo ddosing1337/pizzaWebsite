@@ -1,7 +1,14 @@
 let pizzaMenu = document.querySelector(".mobile-pizza-menu");
-console.log(pizzaMenu);
 
-function insertPizza(name, ingredients, picture, price) {
+if (!localStorage.pizzas) {
+  getPizzas();
+  setTimeout(getPizzas, 60 * 1000);
+}
+if (!localStorage.orderList) {
+  localStorage.orderList = JSON.stringify([]);
+}
+
+function insertPizza(id, name, ingredients, picture, price) {
   pizzaMenu.innerHTML += `<div class="pizza">
 <figure>
   <img
@@ -19,7 +26,7 @@ function insertPizza(name, ingredients, picture, price) {
     <span class="price-accent">${price}</span>
   </div>
   <div class="buttons">
-    <button class="order-button">
+    <button class="order-button" id="pizza${id}">
       В корзину <i class="fas fa-shopping-cart"></i>
     </button>
   </div>
@@ -27,38 +34,37 @@ function insertPizza(name, ingredients, picture, price) {
 </div>`;
 }
 
-// fetch("http://127.0.0.1:4000/")
-//   .then((res) => json)
-//   .then((json) => pizzas)
-//   .then((pizzas) => console.log(pizzas))
-//   .catch((err) => console.log(err));
-
-// for (let i = 0; i < 10; i++) {
-//   insertPizza();
-// }
-
-// const data = null;
-
-// const xhr = new XMLHttpRequest();
-
-// xhr.addEventListener("readystatechange", function () {
-//   if (this.readyState === this.DONE) {
-//     console.log(this.responseText);
-//   }
-// });
-
-// xhr.open("GET", "http://127.0.0.1:4000/");
-
-// xhr.send(data);
-
-fetch("http://127.0.0.1:4000/", {
-  method: "get",
-})
-  .then((res) => res.json())
-  .then((json) => {
-    console.log(json);
-    json.forEach((elem) => {
-      insertPizza(elem.name, elem.ingridients, elem.picture, elem.price);
-    });
+function getPizzas() {
+  fetch("http://127.0.0.1:4000/", {
+    method: "get",
   })
-  .catch((err) => console.log(err));
+    .then((res) => res.json())
+    .then((json) => {
+      console.log(json);
+      localStorage.pizzas = JSON.stringify(json);
+    })
+    .catch((err) => console.log(err));
+}
+
+function showPizzas(pizzas) {
+  console.log(pizzas);
+  pizzas.forEach((elem) => {
+    insertPizza(elem.id, elem.name, elem.ingridients, elem.picture, elem.price);
+  });
+}
+
+showPizzas(JSON.parse(localStorage.pizzas));
+
+function addToCart(e) {
+  if (e.target.tagName != "BUTTON") return;
+
+  pizzaId = +e.target.id.slice(5);
+  list = JSON.parse(localStorage.orderList);
+
+  list[pizzaId] ? list[pizzaId]++ : (list[pizzaId] = 1);
+  localStorage.orderList = JSON.stringify(list);
+
+  console.log(list);
+}
+
+pizzaMenu.addEventListener("click", addToCart);
