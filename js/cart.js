@@ -2,15 +2,14 @@ const cartProducts = document.querySelector(".cart-products");
 const cartTotal = document.querySelector(".cart-total");
 const orderSubmit = document.getElementById("submit-button");
 
-if (!localStorage.pizzas) {
-  getPizzas();
-}
+getPizzas();
+
 if (!localStorage.orderList) {
   localStorage.orderList = JSON.stringify([]);
 }
 
 function getPizzas() {
-  fetch("http://127.0.0.1:4000/", {
+  fetch("http://192.168.100.3:4000/", {
     method: "get",
   })
     .then((res) => res.json())
@@ -29,7 +28,7 @@ function insertCartProduct(id, name, picture, price, count) {
                     "
   >
     <img
-      src="./images/pizzas/lg/barbecue_classic.png"
+      src="./images/pizzas/${picture}"
       alt="${name}"
       class="cart-product-image"
     />
@@ -97,11 +96,13 @@ function setTotal() {
     if (!list[elem.id]) return;
     total += list[elem.id] * elem.price;
   });
-  cartTotal.firstChild.textContent = total;
+  cartTotal.firstChild.textContent = total.toFixed(2);
 }
 
 function submitForm(e) {
   e.preventDefault();
+  if (!Validate()) return;
+
   let _order_list = "";
   let list = JSON.parse(localStorage.orderList);
   let pizzas = JSON.parse(localStorage.pizzas);
@@ -109,7 +110,7 @@ function submitForm(e) {
     if (!list[elem.id]) return;
     _order_list += elem.id + ":" + list[elem.id] + ";";
   });
-  //console.log(order_list);
+
   let inputs = document.forms[0].elements;
   let _name = inputs.name.value;
   let _surname = inputs.surname.value;
@@ -117,18 +118,7 @@ function submitForm(e) {
   let _phone = inputs.phone.value;
   let _additions = inputs.additions.value;
 
-  for (elem of inputs) {
-    console.log(elem.name, elem.validity.valid);
-  }
-
-  // console.log("request:");
-  // console.log(_name);
-  // console.log(_surname);
-  // console.log(_address);
-  // console.log(_phone);
-  // console.log(_additions);
-
-  fetch("http://127.0.0.1:4000/createOrder/", {
+  fetch("http://192.168.100.3:4000/createOrder/", {
     method: "POST",
     mode: "cors",
     headers: {
@@ -149,6 +139,38 @@ function submitForm(e) {
       console.log(json);
     })
     .catch((err) => console.log(err));
+}
+
+function Validate() {
+  let nameValue = document.getElementById("fName").value;
+  let namePattern = /[A-Я]([а-я])*/;
+  if (!namePattern.test(nameValue)) {
+    alert("Невалидное имя");
+    return false;
+  }
+
+  let surnameValue = document.getElementById("fSurname").value;
+  let surnamePattern = /[A-Я]([а-я])*/;
+  if (!surnamePattern.test(surnameValue)) {
+    alert("Невалидная фамилия");
+    return false;
+  }
+
+  let addressValue = document.getElementById("address").value;
+  let addressPattern = /([А-Я]|[а-я]|\d|\-|\.|,|\s)+/;
+  if (!addressPattern.test(addressValue)) {
+    alert("Невалидный адрес");
+    return false;
+  }
+
+  let phoneValue = document.getElementById("phone").value;
+  let phonePattern = /\+375(\d){9}/;
+  if (!phonePattern.test(phoneValue)) {
+    alert("Невалидный номер телефона");
+    return false;
+  }
+
+  return true;
 }
 
 showCart();

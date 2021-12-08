@@ -1,8 +1,7 @@
 const pizzaMenu = document.querySelector(".mobile-pizza-menu");
 
-if (!localStorage.pizzas) {
-  getPizzas();
-}
+getPizzas();
+
 if (!localStorage.orderList) {
   localStorage.orderList = JSON.stringify([]);
 }
@@ -12,7 +11,7 @@ function insertPizza(id, name, ingridients, picture, price) {
 <figure>
   <img
     class="pizza-image"
-    src="images/pizzas/sm/ham_classic.png"
+    src="images/pizzas/${picture}"
     alt="${name}"
   />
 </figure>
@@ -34,7 +33,7 @@ function insertPizza(id, name, ingridients, picture, price) {
 }
 
 function getPizzas() {
-  fetch("http://127.0.0.1:4000/", {
+  fetch("http://192.168.100.3:4000/", {
     method: "get",
   })
     .then((res) => res.json())
@@ -46,7 +45,6 @@ function getPizzas() {
 }
 
 function showPizzas(pizzas) {
-  console.log(pizzas);
   pizzas.forEach((elem) => {
     insertPizza(elem.id, elem.name, elem.ingridients, elem.picture, elem.price);
   });
@@ -62,8 +60,6 @@ function addToCart(e) {
 
   list[pizzaId] ? list[pizzaId]++ : (list[pizzaId] = 1);
   localStorage.orderList = JSON.stringify(list);
-
-  console.log(list);
 }
 
 pizzaMenu.addEventListener("click", addToCart);

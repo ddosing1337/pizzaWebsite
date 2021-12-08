@@ -19,9 +19,9 @@ app.use(cors());
 
 app.get("/", (req, res) => {
   let x = async function () {
-    let y = await pizzas.findAll().then((name) => {
+    let y = await pizzas.findAll(); /*.then((name) => {
       console.log(name);
-    });
+    });*/
     //console.log(y)
     //res.setHeader("Access-Control-Allow-Origin", "http://127.0.0.1:5500");
     res.json(y);

@@ -1,5 +1,3 @@
-/* This Palette ?: https://icolorpalette.com/imagepalette/dish_pizza_cuisine-2 */
-
 * {
   margin: 0;
   padding: 0;
@@ -36,12 +34,12 @@ body {
 /* Desktop Nav settings */
 
 .desktop-nav {
+  display: flex;
   justify-content: space-between;
   position: sticky;
   top: 0px;
   background-color: rgb(2, 75, 2);
   z-index: 10;
-  display: none;
 }
 
 .desktop-nav .logo img {
@@ -98,45 +96,6 @@ body {
 #cart:hover {
   background-color: #be1e2d;
   border-bottom: none;
-}
-
-/* Mobile Nav Settings */
-
-.mobile-nav {
-  position: sticky;
-  top: 0px;
-  z-index: 20;
-}
-
-.mobile-nav div ul {
-  padding-top: 15px;
-}
-
-.navbar {
-  background-color: rgb(2, 75, 2);
-}
-
-.navbar a {
-  color: white;
-}
-
-.mobile-logo {
-  width: 48px;
-  height: 48px;
-}
-
-.mobile-nav button {
-  padding: 12px 10px;
-  border: 2px solid white;
-}
-
-#mobile-cart {
-  color: #941a26;
-}
-
-#mobile-cart:hover,
-.active #mobile-cart {
-  color: #be1e2d;
 }
 
 .container {
@@ -270,8 +229,6 @@ body {
 /* Menu settings */
 
 .mobile-pizza-menu {
-  /* background: #ececec; */
-  /* display: none; */
   display: flex;
   flex-wrap: wrap;
 }
@@ -292,7 +249,6 @@ body {
   position: relative;
   flex: 0 300px;
   margin: 20px 20px;
-  /* border:1px solid rgba(0,0,0,.125); */
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 0.25rem;
   overflow: hidden;
@@ -454,96 +410,6 @@ p {
   margin: 0 auto;
 }
 
-/* Calculated values */
-
-.carousel-pizza-1 {
-  transform: rotate(30deg);
-}
-
-.carousel-pizza-2 {
-  transform: rotate(60deg);
-}
-
-.carousel-pizza-3 {
-  transform: rotate(90deg);
-}
-
-.carousel-pizza-4 {
-  transform: rotate(120deg);
-}
-
-.carousel-pizza-5 {
-  transform: rotate(150deg);
-}
-
-.carousel-pizza-6 {
-  transform: rotate(180deg);
-}
-
-.carousel-pizza-7 {
-  transform: rotate(210deg);
-}
-
-.carousel-pizza-8 {
-  transform: rotate(240deg);
-}
-
-.carousel-pizza-9 {
-  transform: rotate(270deg);
-}
-
-.carousel-pizza-10 {
-  transform: rotate(300deg);
-}
-
-.carousel-pizza-11 {
-  transform: rotate(330deg);
-}
-
-.carousel-pizza-1 .carousel-pizza {
-  transform: rotate(-30deg);
-}
-
-.carousel-pizza-2 .carousel-pizza {
-  transform: rotate(-60deg);
-}
-
-.carousel-pizza-3 .carousel-pizza {
-  transform: rotate(-90deg);
-}
-
-.carousel-pizza-4 .carousel-pizza {
-  transform: rotate(-120deg);
-}
-
-.carousel-pizza-5 .carousel-pizza {
-  transform: rotate(-150deg);
-}
-
-.carousel-pizza-6 .carousel-pizza {
-  transform: rotate(-180deg);
-}
-
-.carousel-pizza-7 .carousel-pizza {
-  transform: rotate(-210deg);
-}
-
-.carousel-pizza-8 .carousel-pizza {
-  transform: rotate(-240deg);
-}
-
-.carousel-pizza-9 .carousel-pizza {
-  transform: rotate(-270deg);
-}
-
-.carousel-pizza-10 .carousel-pizza {
-  transform: rotate(-300deg);
-}
-
-.carousel-pizza-11 .carousel-pizza {
-  transform: rotate(-330deg);
-}
-
 #carousel-order-button {
   border-radius: 60px;
 }
@@ -552,9 +418,6 @@ p {
   justify-content: flex-end;
 }
 
-/* OSTAVQME ?!  */
-/* OSTAVQME ?!  */
-/* OSTAVQME ?!  */
 /* OSTAVQME ?!  */
 @media screen and (max-width: 960px) {
   .pizza-carousel-menu {
@@ -651,6 +514,15 @@ form button[type="submit"]:hover {
   color: #941a26;
 }
 
+.map h2,
+.info-container h2,
+.container h2 {
+  font-size: 1.9em;
+  text-align: center;
+  margin: 25px 0 10px;
+  color: #024b02;
+}
+
 .map iframe {
   width: 100%;
   height: 600px;
@@ -666,10 +538,7 @@ footer {
   background-color: #be1e2d;
   text-align: center;
   margin-top: 20px;
-}
-
-.footer-credits-section {
-  padding: 10px;
+  padding: 10px 0h1;
 }
 
 footer p {
@@ -711,7 +580,6 @@ footer p {
   max-width: 960px;
   margin: 0 auto;
   font-size: 1.25em;
-  /* color: rgba(0, 0, 0, 0.6); */
 }
 
 .cart-header {
@@ -733,7 +601,7 @@ footer p {
   margin-left: 16px;
 }
 
-.cart-product-row/*:not(:last-child)*/ {
+.cart-product-row {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -749,7 +617,6 @@ footer p {
   justify-content: space-between;
   width: 15%;
   margin: 0 5%;
-  /*align-self: flex-end;*/
 }
 
 .cart-product-quantity {
@@ -774,7 +641,6 @@ footer p {
 }
 
 .cart-product-price {
-  /* color: #BE1E2D; */
   font-size: 1.1em;
   width: 80px;
   display: flex;
@@ -988,10 +854,6 @@ textarea::placeholder {
     padding-right: 90px;
   }
 
-  .desktop-nav {
-    display: flex;
-  }
-
   .form-container {
     width: 70%;
     margin: 0 auto;
@@ -1017,11 +879,11 @@ textarea::placeholder {
     visibility: visible;
   }
 
-  /* .pizza {
+  .pizza {
     flex: 0 0 400px;
     margin-left: 40px;
     margin-right: 40px;
-  } */
+  }
 
   .card {
     flex: 0 0 300px;
